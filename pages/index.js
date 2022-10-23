@@ -1,14 +1,17 @@
+import { Footer } from "../components/Footer";
+import { Header } from "../components/header";
+import { Hero } from "../components/Hero";
+
 export default function Home() {
   return (
     <>
-      <header>Header</header>
+      <Header></Header>
+
       <main>
-        <div>
-          <h1>SSG Blog</h1>
-          <p>ブログサイト</p>
-        </div>
+        <Hero></Hero>
       </main>
-      <footer>Footer</footer>
+
+      <Footer></Footer>
     </>
   );
 }
