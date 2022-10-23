@@ -1,17 +1,12 @@
 import { Footer } from "../components/Footer";
 import { Header } from "../components/header";
 import { Hero } from "../components/Hero";
+import { Layout } from "../components/Layout/Layout";
 
 export default function Home() {
   return (
-    <>
-      <Header></Header>
-
-      <main>
-        <Hero></Hero>
-      </main>
-
-      <Footer></Footer>
-    </>
+    <Layout>
+      <Hero></Hero>
+    </Layout>
   );
 }
