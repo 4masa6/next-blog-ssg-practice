@@ -1,5 +1,5 @@
-import { Logo } from "./atoms/Logo"
-import { Nav } from "./atoms/Nav"
+import { Logo } from "../atoms/Logo"
+import { Nav } from "../atoms/Nav"
 
 export const Header = () => {
   return (
