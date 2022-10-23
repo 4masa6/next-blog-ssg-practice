@@ -1,9 +1,11 @@
-export const Hero = () => {
+export const Hero = (props) => {
+  const { title, subtitle } = props;
+
   return (
     <>
       <div>
-        <h1>SSG Blog</h1>
-        <p>ブログサイト</p>
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
       </div>
     </>
   )
