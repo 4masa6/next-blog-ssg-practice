@@ -3,6 +3,28 @@
   gap: 2em;
 }
 
-.list a:hover {
-  color: var(--accent);
+/* 
+  モバイル環境では、:hoverのスタイルがタップしたときに適用される。
+  このスタイルは他の操作を行うまで解除されないため、
+  :hoverのスタイルはモバイルに適用されないようにする必要がある。
+ */
+
+/* ホバーできる環境に適用 */
+@media (hover: hover) {
+  .list a:hover {
+    color: var(--accent);
+  }
+}
+
+/* ホバーできない環境に適用 */
+@media (hover: none) {
+  .list a {
+    /* タップ時に適用されるデバイス標準のハイライトカラーを削除 */
+    --webkit-tap-highlight-color: transparent;
+  }
+
+  /* タップ時にアクセントカラーで表示 */
+  .list a:active {
+    color: var(--accent);
+  }
 }
