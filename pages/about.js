@@ -14,7 +14,14 @@ import eyecatch from "../img/about.jpg";
 export default function About() {
   return (
     <Container>
-      <Meta pageTitle="about" pageDesc="practice next.js ssg" />
+      <Meta
+        pageTitle="about"
+        pageDesc="practice next.js ssg"
+        // アイキャッチから画像のURL、高さ、幅を取得して指定
+        pageImg={eyecatch.src}
+        pageImgWidth={eyecatch.width}
+        pageImgHeight={eyecatch.height}
+      />
       <Hero title="About" subtitle="About develop activities" />
 
       <figure>
