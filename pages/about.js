@@ -14,7 +14,7 @@ import eyecatch from "../img/about.jpg";
 export default function About() {
   return (
     <Container>
-      <Meta pageTitle="about" />
+      <Meta pageTitle="about" pageDesc="practice next.js ssg" />
       <Hero title="About" subtitle="About develop activities" />
 
       <figure>
