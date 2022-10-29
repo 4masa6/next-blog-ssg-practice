@@ -1,3 +1,4 @@
+import { Meta } from "../components/layout/Meta";
 import { Contact } from "../components/layout/Contact";
 import { Container } from "../components/Layout/Container";
 import { Hero } from "../components/layout/Hero";
@@ -13,6 +14,7 @@ import eyecatch from "../img/about.jpg";
 export default function About() {
   return (
     <Container>
+      <Meta pageTitle="about" />
       <Hero title="About" subtitle="About develop activities" />
 
       <figure>
