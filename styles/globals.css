@@ -46,6 +46,11 @@ h3 {
   font-size: var(--heading3);
 }
 
+/* blur画像から切り替わるアニメーションの時間 */
+span > img { /* next/imageで表示する画像はspanでマークアップされている */
+  transition: 0.2s;
+}
+
 /* リセット */
 body,
 h1,

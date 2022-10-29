@@ -7,11 +7,24 @@ import {
   TwoColumnMain,
   TwoColumnSidebar,
 } from "../components/layout/TwoColumn";
+import Image from "next/image";
+import eyecatch from "../img/about.jpg";
 
 export default function About() {
   return (
     <Container>
       <Hero title="About" subtitle="About develop activities" />
+
+      <figure>
+        <Image
+          src={eyecatch}
+          alt=""
+          layout="responsive"
+          size="{min-width: 1152px;} 1152px, 100vw" // 画面幅が1152px以上では1152px、それ以下では100vwが適用される
+          priority // LCP対策で優先的に読ませる
+          placeholder="blur" // ブラー画像を表示する
+        />
+      </figure>
 
       <TwoColumn>
         <TwoColumnMain>
