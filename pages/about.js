@@ -1,3 +1,4 @@
+import { Contact } from "../components/layout/Contact";
 import { Container } from "../components/Layout/Container";
 import { Hero } from "../components/layout/Hero";
 import { PostBody } from "../components/layout/PostBody";
@@ -23,6 +24,8 @@ export default function About() {
           テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
         </p>
       </PostBody>
+
+      <Contact />
     </Container>
   );
 }
