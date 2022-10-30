@@ -1,4 +1,5 @@
 import { Logo } from '../atoms/Logo'
+import { Social } from '../atoms/Social'
 import { Container } from './Container'
 import styles from './styles/footer.module.css'
 
@@ -8,7 +9,7 @@ export const Footer = () => {
       <Container>
         <div className={styles.flexContainer}>
           <Logo />
-          [ソーシャルアイコン]
+          <Social />
         </div>
       </Container>
     </footer>
