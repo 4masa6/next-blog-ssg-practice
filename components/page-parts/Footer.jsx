@@ -1,6 +1,6 @@
 import { Logo } from '../atoms/Logo'
 import { Social } from '../atoms/Social'
-import { Container } from './Container'
+import { Container } from '../layout/Container'
 import styles from './styles/footer.module.css'
 
 export const Footer = () => {

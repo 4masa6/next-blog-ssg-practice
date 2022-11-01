@@ -1,5 +1,5 @@
-import { Footer } from "./Footer"
-import { Header } from "./Header"
+import { Footer } from "../page-parts/Footer"
+import { Header } from "../page-parts/Header"
 
 export const Layout = ({ children }) => {
   return (

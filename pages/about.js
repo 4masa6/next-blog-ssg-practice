@@ -1,15 +1,15 @@
-import { Meta } from "../components/layout/Meta";
-import { Contact } from "../components/layout/Contact";
-import { Container } from "../components/Layout/Container";
-import { Hero } from "../components/layout/Hero";
-import { PostBody } from "../components/layout/PostBody";
+import { Meta } from '../components/layout/Meta'
+import { Contact } from '../components/page-parts/Contact'
+import { Container } from '../components/Layout/Container'
+import { Hero } from '../components/page-parts/Hero'
+import { PostBody } from '../components/page-parts/PostBody'
 import {
   TwoColumn,
   TwoColumnMain,
   TwoColumnSidebar,
-} from "../components/layout/TwoColumn";
-import Image from "next/image";
-import eyecatch from "../img/about.jpg";
+} from '../components/layout/TwoColumn'
+import Image from 'next/image'
+import eyecatch from '../img/about.jpg'
 
 export default function About() {
   return (
@@ -76,5 +76,5 @@ export default function About() {
         </TwoColumnSidebar>
       </TwoColumn>
     </Container>
-  );
+  )
 }

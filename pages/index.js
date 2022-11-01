@@ -1,6 +1,6 @@
-import { Meta } from "../components/layout/Meta";
-import { Container } from "../components/Layout/Container";
-import { Hero } from "../components/layout/Hero";
+import { Meta } from '../components/layout/Meta'
+import { Container } from '../components/Layout/Container'
+import { Hero } from '../components/page-parts/Hero'
 
 export default function Home() {
   return (
@@ -8,5 +8,5 @@ export default function Home() {
       <Meta />
       <Hero title="SSG Blog" subtitle="ブログサイト" imageOn />
     </Container>
-  );
+  )
 }
