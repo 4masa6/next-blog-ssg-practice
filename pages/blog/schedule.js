@@ -1,6 +1,12 @@
 import { getPostBySlug } from '../../lib/api'
 import { Container } from '../../components/layout/Container'
 import { PostHeader } from '../../components/page-parts/PostHeader'
+import { PostBody } from '../../components/page-parts/PostBody'
+import {
+  TwoColumn,
+  TwoColumnMain,
+  TwoColumnSidebar,
+} from '../../components/layout/TwoColumn'
 import Image from 'next/image'
 
 export default function Schedule({
@@ -25,6 +31,15 @@ export default function Schedule({
           priority
         />
       </figure>
+
+      <TwoColumn>
+        <TwoColumnMain>
+          <PostBody>
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
+          </PostBody>
+        </TwoColumnMain>
+        <TwoColumnSidebar></TwoColumnSidebar>
+      </TwoColumn>
     </Container>
   )
 }
