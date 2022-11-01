@@ -2,6 +2,7 @@ import { getPostBySlug } from '../../lib/api'
 import { Container } from '../../components/layout/Container'
 import { PostHeader } from '../../components/page-parts/PostHeader'
 import { PostBody } from '../../components/page-parts/PostBody'
+import { ConvertBody } from '../../components/functions/ConvertBody'
 import {
   TwoColumn,
   TwoColumnMain,
@@ -35,7 +36,13 @@ export default function Schedule({
       <TwoColumn>
         <TwoColumnMain>
           <PostBody>
-            <div dangerouslySetInnerHTML={{ __html: content }}></div>
+            {/*
+            HTMLの文字列をReact要素に変換する方法でシンプルなのは、dangerouslySetInnerHTMLを使う
+            ただしdangerouslySetInnerHTMLはinnerHTMLとして扱われるので、階層が深くなりCSSが当たらなくなったりする。
+            また、HTMLの文字列をReact要素として表示するだけなので、画像を最適化できない（next/imageが使用できない）
+            そのためここでは｢html-react-parser｣を使用する
+            */}
+            <ConvertBody contentHTML={content} />
           </PostBody>
         </TwoColumnMain>
         <TwoColumnSidebar></TwoColumnSidebar>
