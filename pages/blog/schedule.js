@@ -3,6 +3,7 @@ import { Container } from '../../components/layout/Container'
 import { PostHeader } from '../../components/page-parts/PostHeader'
 import { PostBody } from '../../components/page-parts/PostBody'
 import { ConvertBody } from '../../components/functions/ConvertBody'
+import { PostCategories } from '../../components/page-parts/PostCategories'
 import {
   TwoColumn,
   TwoColumnMain,
@@ -45,7 +46,9 @@ export default function Schedule({
             <ConvertBody contentHTML={content} />
           </PostBody>
         </TwoColumnMain>
-        <TwoColumnSidebar></TwoColumnSidebar>
+        <TwoColumnSidebar>
+          <PostCategories categories={categories} />
+        </TwoColumnSidebar>
       </TwoColumn>
     </Container>
   )
