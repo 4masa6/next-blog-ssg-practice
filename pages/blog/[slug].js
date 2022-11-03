@@ -1,5 +1,6 @@
 import { Meta } from '../../components/layout/Meta'
-import { getPostBySlug } from '../../lib/api'
+import { getPostBySlug, getAllSlugs } from '../../lib/api'
+
 import { extractText } from '../../lib/extractText'
 import { Container } from '../../components/layout/Container'
 import { PostHeader } from '../../components/page-parts/PostHeader'
@@ -73,8 +74,10 @@ export default function Post({
 }
 
 export async function getStaticPaths() {
+  const allSlugs = await getAllSlugs()
+
   return {
-    paths: ['/blog/schedule', '/blog/music', '/blog/micro'],
+    paths: allSlugs.map(({ slug }) => `/blog/${slug}`),
     fallback: false,
   }
 }
