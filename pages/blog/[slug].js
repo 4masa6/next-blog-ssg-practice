@@ -1,20 +1,24 @@
 import { Meta } from '../../components/layout/Meta'
 import { getPostBySlug, getAllSlugs } from '../../lib/api'
-
 import { extractText } from '../../lib/extractText'
-import { Container } from '../../components/layout/Container'
+import { prevNextPost } from '../../lib/prev-next-post'
+import { eyecatchLocal } from '../../lib/constants'
+
+import { ConvertBody } from '../../components/functions/ConvertBody'
+
 import { PostHeader } from '../../components/page-parts/PostHeader'
 import { PostBody } from '../../components/page-parts/PostBody'
-import { ConvertBody } from '../../components/functions/ConvertBody'
 import { PostCategories } from '../../components/page-parts/PostCategories'
+import { Pagination } from '../../components/page-parts/Pagination'
+import { Container } from '../../components/layout/Container'
 import {
   TwoColumn,
   TwoColumnMain,
   TwoColumnSidebar,
 } from '../../components/layout/TwoColumn'
+
 import Image from 'next/image'
 import { getPlaiceholder } from 'plaiceholder'
-import { eyecatchLocal } from '../../lib/constants'
 
 export default function Post({
   post,
@@ -24,6 +28,8 @@ export default function Post({
   eyecatch,
   categories,
   description,
+  prevPost,
+  nextPost,
 }) {
   return (
     <Container>
@@ -68,6 +74,13 @@ export default function Post({
             <PostCategories categories={categories} />
           </TwoColumnSidebar>
         </TwoColumn>
+
+        <Pagination
+          prevText={prevPost.title}
+          prevUrl={`/blog/${prevPost.slug}`}
+          nextText={nextPost.title}
+          nextUrl={`/blog/${nextPost.slug}`}
+        />
       </article>
     </Container>
   )
@@ -92,6 +105,9 @@ export async function getStaticProps(context) {
   const { base64 } = await getPlaiceholder(eyecatch.url)
   eyecatch.blurDataURL = base64
 
+  const allSlugs = await getAllSlugs()
+  const [prevPost, nextPost] = prevNextPost(allSlugs, slug)
+
   return {
     props: {
       post: post,
@@ -101,6 +117,8 @@ export async function getStaticProps(context) {
       eyecatch: eyecatch,
       categories: post.categories,
       description: description,
+      prevPost: prevPost,
+      nextPost: nextPost,
     },
   }
 }
