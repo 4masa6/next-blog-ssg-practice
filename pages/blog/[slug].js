@@ -46,6 +46,7 @@ export default function Post({
 
         <figure>
           <Image
+            key={eyecatch.url} // ページネーション時にコンポーネントを異なるコンポーネントと認識させることでアンマウントさせる
             src={eyecatch.url}
             alt=""
             layout="responsive"
