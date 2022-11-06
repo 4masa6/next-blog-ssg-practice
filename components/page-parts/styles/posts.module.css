@@ -11,3 +11,8 @@
   font-size: var(--small-heading3);
   font-weight: 400;
 }
+
+.post figure {
+  position: relative; /* next/imageのレイアウトモードをfillにした場合、親にposition: relative;の設定が必要 */
+  aspect-ratio: 16/9;
+}

@@ -13,9 +13,9 @@ export const Posts = ({ posts }) => {
                 <Image
                   src={eyecatch.url}
                   alt=""
-                  layout="responsive"
-                  width={eyecatch.width}
-                  height={eyecatch.height}
+                  // レイアウトモードをfillに設定するとwidthとheightの指定は不要
+                  layout="fill"
+                  objectFit="cover"
                   sizes="(min-width: 1152px) 576px, 50vw"
                   placeholder="blur"
                   blurDataURL={eyecatch.blurDataURL}
