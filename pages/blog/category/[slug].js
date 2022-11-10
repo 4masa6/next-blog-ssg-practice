@@ -1,3 +1,4 @@
+import { Meta } from '../../../components/layout/Meta'
 import { Container } from '../../../components/layout/Container'
 import { PostHeader } from '../../../components/page-parts/PostHeader'
 import { Posts } from '../../../components/page-parts/Posts'
@@ -8,6 +9,7 @@ import { eyecatchLocal } from '../../../lib/constants' // ローカルの代替�
 export default function Category({ name, posts }) {
   return (
     <Container>
+      <Meta pageTitle={name} pageDesc={`${name}に関する記事`} />
       <PostHeader title={name} subtitle="カテゴリー" />
       <Posts posts={posts} />
     </Container>
