@@ -1,11 +1,15 @@
 import { Container } from '../../../components/layout/Container'
 import { PostHeader } from '../../../components/page-parts/PostHeader'
-import { getAllCategories } from '../../../lib/api'
+import { Posts } from '../../../components/page-parts/Posts'
+import { getAllCategories, getAllPostsByCategory } from '../../../lib/api'
+import { getPlaiceholder } from 'plaiceholder'
+import { eyecatchLocal } from '../../../lib/constants' // ローカルの代替アイキャッチ
 
-export default function Category({ name }) {
+export default function Category({ name, posts }) {
   return (
     <Container>
       <PostHeader title={name} subtitle="カテゴリー" />
+      <Posts posts={posts} />
     </Container>
   )
 }
@@ -25,9 +29,20 @@ export async function getStaticProps(context) {
   // すべてのカテゴリーから、パラメーターで渡したカテゴリーを取得
   const category = allCategories.find(({ slug }) => slug === categorySlug)
 
+  const posts = await getAllPostsByCategory(category.id)
+
+  for (const post of posts) {
+    if (!post.hasOwnProperty('eyecatch')) {
+      post.eyecatch = eyecatchLocal
+    }
+    const { base64 } = await getPlaiceholder(post.eyecatch.url)
+    post.eyecatch.blurDataURL = base64
+  }
+
   return {
     props: {
       name: category.name,
+      posts: posts,
     },
   }
 }
