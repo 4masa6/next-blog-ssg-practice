@@ -10,6 +10,7 @@ import {
 } from '../components/layout/TwoColumn'
 import Image from 'next/image'
 import eyecatch from '../img/about.jpg'
+import { Accordion } from '../components/page-parts/Accordion'
 
 export default function About() {
   return (
@@ -68,6 +69,23 @@ export default function About() {
             <p>
               テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
             </p>
+
+            <h2>FAQ</h2>
+            <Accordion heading="アコーディオン１">
+              <p>
+                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </Accordion>
+            <Accordion heading="アコーディオン２">
+              <p>
+                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </Accordion>
+            <Accordion heading="アコーディオン３">
+              <p>
+                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+              </p>
+            </Accordion>
           </PostBody>
         </TwoColumnMain>
 
