@@ -1,6 +1,6 @@
 import { Meta } from '../components/layout/Meta'
 import { Contact } from '../components/page-parts/Contact'
-import { Container } from '../components/Layout/Container'
+import { Container } from '../components/layout/Container'
 import { Hero } from '../components/page-parts/Hero'
 import { PostBody } from '../components/page-parts/PostBody'
 import {

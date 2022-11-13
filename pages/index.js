@@ -2,7 +2,7 @@ import { getAllPosts } from '../lib/api'
 import { eyecatchLocal } from '../lib/constants'
 
 import { Meta } from '../components/layout/Meta'
-import { Container } from '../components/Layout/Container'
+import { Container } from '../components/layout/Container'
 import { Hero } from '../components/page-parts/Hero'
 import { Posts } from '../components/page-parts/Posts'
 import { Pagination } from '../components/page-parts/Pagination'
