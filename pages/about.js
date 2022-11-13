@@ -9,8 +9,16 @@ import {
   TwoColumnSidebar,
 } from '../components/layout/TwoColumn'
 import Image from 'next/image'
-import eyecatch from '../img/about.jpg'
+// import eyecatch from '../img/about.jpg'
 import { Accordion } from '../components/page-parts/Accordion'
+
+const eyecatch = {
+  src: 'https://images.microcms-assets.io/assets/b7f0191ed70a4637b8c20570346ae5e4/8a431e683eb140e39d982e09e5e2776f/about.jpg',
+  height: 960,
+  width: 1920,
+  blurDataURL:
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAIAAADwyuo0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAI0lEQVR4nGMofPL/yv//8x+9y7r/m6Hu638GvwQmDobCa+8B4vwPOhdiFzEAAAAASUVORK5CYII=',
+}
 
 export default function About() {
   return (
